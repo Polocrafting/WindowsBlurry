@@ -15,12 +15,12 @@ Page HTML crée en partie avec des IA, le code n'est pas vraiment optimisé. Le 
           04/03/23 : Ajoute Visionneur YouTube
           03/03/23 : Changement des applications pour des pages web
           03/03/23 : Répartition des applications créant "Paramètres"
-old 1 :   02/03/23 : Ajout la possibilité de créer des fonds d'écran
+  old 1 : 02/03/23 : Ajout la possibilité de créer des fonds d'écran
           02/03/23 : Centrage menu démarré
-old 4 :   01/03/23 : Crée à l'infini des fenêtres
+  old 4 : 01/03/23 : Crée à l'infini des fenêtres
           28/02/23 : Possibilité de déplacer plusieurs fenêtres
-old 3 :   28/02/23 : Publication de la page
-old 2 :   28/02/23 : Création menu démarré
+  old 3 : 28/02/23 : Publication de la page
+  old 2 : 28/02/23 : Création menu démarré
           27/02/23 : Création de la barre des taches
           27/02/23 : Création des fenêtres et de leurs paramètres associée
-old 1 :   27/02/23 : Création du projet
+  old 1 : 27/02/23 : Création du projet
