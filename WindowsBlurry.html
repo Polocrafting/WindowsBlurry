@@ -11,8 +11,9 @@
       }
 
       body {
+         background-image: url("https://zupimages.net/up/23/18/zyta.png");
         position: relative;
-        background-image: url("https://zupimages.net/up/23/18/zyta.png");
+       
         background-size: cover;
         background-position: center;
   overflow: hidden;
@@ -30,7 +31,22 @@ border-radius: 20px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(10px);
       }
+      .info {
+        bottom: 60px;
+    right: 60px;
+    width: 350px;
+        position: absolute;
+border-radius: 20px;
+        height: 280px;
+        background-color: rgba(255, 255, 255, 0.3);
 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        font-family: arial;
+        font-size: 20px;
+        color: white;
+        padding: 20px;
+      }
 
 .button {
     position: absolute;
@@ -72,6 +88,11 @@ border-radius: 20px;
 
       }
       #Donwload:hover {
+
+        background-color: rgba(200, 200, 200, 0.6);
+
+      }
+            #POWER:hover {
 
         background-color: rgba(200, 200, 200, 0.6);
 
@@ -653,6 +674,10 @@ background-color: rgba(255, 255, 255, 0.1);
       background-color: rgba(255, 255, 255, 0.1);
               border-radius: 15px;
     }
+        #POWERbu{
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
 
 
 
@@ -777,6 +802,20 @@ background-color: rgba(100, 100, 100, 0.5);
       top:50%;
     }
 
+#heure2, #date2 {
+      font-size: 75px;
+      font-weight: bold;
+      margin: 0;
+      position: absolute;
+bottom:120px;
+left: 60px;
+      color:white;
+    }
+    #date2 {
+            position: absolute;
+
+      bottom:60px;
+    }
 
     #note ,#calc {
  filter: brightness(1) contrast(0.5);
@@ -835,10 +874,57 @@ background-color: rgba(100, 100, 100, 0.5);
       top:40px;
     }
 
+            .fullscreen-image {
+
+
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9998;
+        }
+
+#slidingDiv {
+  z-index: 99999;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  background-image: url("https://www.pixfan.com/wp-content/uploads/2022/02/31246-andreazappia-abovetheclouds.jpg");
+  bottom: 0;
+       
+        background-size: cover;
+        background-position: center;
+  overflow: hidden;
+  cursor: grab;
+  cursor: -webkit-grab;
+}
+    .ombre {
+
+        background-color: #f0f0f0;
+        box-shadow: 0 0 160px rgba(0, 0, 0, 1); /* Ajoute une ombre avec un flou de 10px */
+    }
+
+
     </style>
+<div id="slidingDiv"class="ombre">  
+  <span id="heure2"></span>
+    <span id="date2"></span>
+<div class="info" id="info">Crée par polocrafting aidé par des IA tels que ChatGPT ou BingChat.
+<br><br>Les image ébergé par https://www.zupimages.net/ peuvent parfoir être caprisieuse à chargé mais rien de bien grave.
+<br><br>La page est toujours en développement, donc soyez compréhensif si vous rencontré un bug, bonne naviguation :)</div>
+
+
+
+  </div>
+
+
     <!-- Ajouter la bibliothèque d'icônes -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        </head><body><div class="rectangle" id="rectangle">
+
+
+        </head><body><div class="rectangle" id="rectangle" style="display: none;">
 
 <button id="Donwload" class="button" onclick="window.open('https://github.com/Polocrafting/WindowsBlurry/releases/download/WindowsBlurry/A.telecharger.Windows.Blurry.dev.html')"><img src="https://icon-icons.com/icons2/692/PNG/512/seo-social-web-network-internet_12_icon-icons.com_61498.png" width="15" height="15">&nbsp;&nbsp;Télécharger le code HTML?</button>
 
@@ -1017,7 +1103,8 @@ Flou  des fenêtres :  &nbsp;
   </div>
 
     <div class="status-icon">
-     <img src="https://zupimages.net/up/23/09/7351.png" alt="Image de profil">
+     <button id="POWERbu" onclick="Power()"><img id="POWER" src="https://zupimages.net/up/23/09/7351.png" alt="Image de profil" ></button>
+     
     </div>
 
 
@@ -1035,11 +1122,105 @@ Flou  des fenêtres :  &nbsp;
 
 </div>
 
+    <img id="off" class="fullscreen-image" src="https://cdn.dribbble.com/users/580/screenshots/2367300/spinkit3.gif" alt="Image en plein écran" style="display: block;">
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"> </script>
 <script>
 
+var slidingDiv = document.getElementById("slidingDiv");
+var initialY = null;
+var offsetY = 0;
 
+// Gérer l'événement de clic de souris lorsqu'il commence
+slidingDiv.addEventListener("mousedown", function(event) {
+  initialY = event.clientY;
+  slidingDiv.style.cursor = "grabbing";
+});
+
+// Gérer l'événement de déplacement de souris pendant le clic
+window.addEventListener("mousemove", function(event) {
+  if (initialY !== null) {
+    offsetY = event.clientY - initialY;
+    slidingDiv.style.top = offsetY + "px";
+
+    // Calculer la hauteur minimale de l'écran à 80%
+    var minHeight = -(window.innerHeight * 0.8);
+
+    // Vérifier si la hauteur de la div atteint ou dépasse la hauteur minimale
+    if (offsetY <= minHeight) {
+      slidingDiv.style.display = "none"; // Cacher la div
+
+        function desabl() {
+        off.style.display = "none";
+        offIsVisible = false;
+}
+
+setTimeout(desabl, 1000);
+
+        function men() {
+          rectangle.style.display = "block";
+    rectangleIsVisible = true;
+}
+
+setTimeout(men, 2000);
+
+    } 
+  }
+});
+
+// Gérer l'événement de relâchement de souris
+window.addEventListener("mouseup", function(event) {
+  if (initialY !== null) {
+    slidingDiv.style.cursor = "grab";
+    initialY = null;
+    offsetY = 0;
+
+    // Récupérer la position initiale de la div
+    var initialTop = 0;
+
+    // Vérifier si la div n'a pas disparu et la ramener à la position initiale
+    if (slidingDiv.style.display !== "none") {
+      slidingDiv.style.top = initialTop + "px";
+    }
+  }
+});
+
+
+
+
+function Power(){
+    rectangle.style.display = "none";
+    rectangleimIsVisible = false;
+  menu.style.display = "none";
+    menuIsVisible = false;
+
+
+function black() {
+    var image = document.getElementById("off");
+  image.src ="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEUAAACnej3aAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=";
+  off.style.display = "block";
+   offIsVisible = true;}
+
+setTimeout(black, 1000);
+
+
+function changerImage() {
+  var image = document.getElementById("off");
+  image.src ="https://cdn.dribbble.com/users/3656783/screenshots/6713099/restrarting-window_02.gif";
+}
+
+setTimeout(changerImage, 1500);
+
+function restart() {
+setTimeout(function() {
+  window.location.reload();
+}, 1000);
+}
+
+setTimeout(restart, 4000);
+
+}
 
 function charg(){
 
@@ -1151,6 +1332,8 @@ var blue = matches[2];
    const ani = document.getElementById("charge");
     const génér = document.getElementById("generate-btn");
     const saveim = document.getElementById("saveim");
+        const rectangle = document.getElementById("rectangle");
+        const off = document.getElementById("off");
   startBtn.addEventListener("click", () => {
     if (menuIsVisible) {
       menu.style.display = "none";
@@ -1263,6 +1446,8 @@ document.querySelector("canvas").style.display = "none";
       var dateAffichee = jour + '/' + mois + '/' + annee;
       document.getElementById("heure").innerHTML = heureAffichee;
       document.getElementById("date").innerHTML = dateAffichee;
+       document.getElementById("heure2").innerHTML = heureAffichee;
+      document.getElementById("date2").innerHTML = dateAffichee;
     }
     afficherHeureDate();
     setInterval(afficherHeureDate, 1000);
