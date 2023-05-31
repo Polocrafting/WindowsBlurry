@@ -1279,6 +1279,14 @@ function changerImage() {
 setTimeout(changerImage, 1500);
 
 function restart() {
+
+  var image = document.getElementById("off");
+  image.src ="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEUAAACnej3aAAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII=";
+}
+
+setTimeout(restart, 4000);
+
+function glow() {
   var image = document.getElementById("off");
   image.src ="https://cdn.dribbble.com/users/580/screenshots/2367300/spinkit3.gif";
   slidingDiv.style.display = "block";
@@ -1303,10 +1311,10 @@ hideElements(windowssett);
 hideElements(bggene);
 
 
-
 }
 
-setTimeout(restart, 4000);
+setTimeout(glow, 5000);
+
 
 }
 
