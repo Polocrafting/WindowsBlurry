@@ -7,4 +7,4 @@ Page HTML crée en partie avec des IA, le code n'est pas vraiment optimisé. Mai
 
 
 Télécharger les fichiers: https://github.com/Polocrafting/WindowsBlurry/releases/tag/WindowsBlurry <br>
-Chaine Youtube : https://www.youtube.com/channel/UCTL3fXI8aZnYweRvys6m2bA?view_as=subscriber
+Chaine Youtube : https://www.youtube.com/channel/UCTL3fXI8aZnYweRvys6m2bA
