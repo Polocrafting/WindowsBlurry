@@ -65,6 +65,23 @@ border-radius: 20px;
     background-color: rgba(255, 255, 255, 1);
 
 }
+.phone {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    z-index: 1000;
+    height: 60px;
+    padding: 10px;
+    font-size: 18px;
+    width: 200px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+    transform: translateX(-70px);
+    background-color: rgba(255, 255, 255, 1);
+
+}
 #Donwload {
     position: absolute;
     bottom: 8px;
@@ -83,6 +100,11 @@ border-radius: 20px;
 
 }
       .button:hover {
+
+        background-color: rgba(200, 200, 200, 0.6);
+
+      }
+            .phone:hover {
 
         background-color: rgba(200, 200, 200, 0.6);
 
@@ -916,7 +938,7 @@ left: 60px;
 <br><br>La page est toujours en développement, donc soyez compréhensif si vous rencontré un bug, bonne naviguation :) 
 <br><br>V:310523-3</div>
 
-
+ <button id="phone" class="phone" onclick="phone()">Mode Téléphone</button>
 
   </div>
 
@@ -1128,6 +1150,19 @@ Flou  des fenêtres :  &nbsp;
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"> </script>
 <script>
+
+function phone(){
+        off.style.display = "none";
+        offIsVisible = false;
+        slidingDiv.style.display = "none";
+        rectangle.style.display = "block";
+        rectangleIsVisible = false;
+                ba.style.display = "none";
+        B1IsVisible = false;
+                        bb.style.display = "none";
+        B2IsVisible = false;
+}
+
 
 var slidingDiv = document.getElementById("slidingDiv");
 var initialY = null;
@@ -1360,6 +1395,8 @@ var blue = matches[2];
     const saveim = document.getElementById("saveim");
         const rectangle = document.getElementById("rectangle");
         const off = document.getElementById("off");
+                const ba = document.getElementById("Donwload");
+        const bb = document.getElementById("guitt");
   startBtn.addEventListener("click", () => {
     if (menuIsVisible) {
       menu.style.display = "none";
