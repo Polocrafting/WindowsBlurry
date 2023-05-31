@@ -1018,7 +1018,7 @@ left: 60px;
 <button id="generate-btn" >Générer le fond (ça peut être long avec un grand écran)<br><br>La résolution de l’image dépend de la taille de la page actuelle et de son zoom<br>
 Pour retiré la barre de navigation, téléchargez la page html (voir la barre des tâches)<br>
 Actualisez la page pour d’autres couleurs/motifs</button>
-   <button id="saveim" style="display: none;">Enregistrer l'image en local sur la machine</button>
+   <button id="saveim" style="display: none;">Enregistrer l'image en local sur la machine (Actualiser la page (f5 ou ↻ pour actualiser))</button>
 
    <div id="image-container"></div>
 
@@ -1183,6 +1183,9 @@ window.addEventListener("mouseup", function(event) {
     if (slidingDiv.style.display !== "none") {
       slidingDiv.style.top = initialTop + "px";
     }
+       if (slidingDiv.style.display !== "block") {
+      slidingDiv.style.top = initialTop + "px";
+    }
   }
 });
 
@@ -1213,9 +1216,31 @@ function changerImage() {
 setTimeout(changerImage, 1500);
 
 function restart() {
-setTimeout(function() {
-  window.location.reload();
-}, 1000);
+  var image = document.getElementById("off");
+  image.src ="https://cdn.dribbble.com/users/580/screenshots/2367300/spinkit3.gif";
+  slidingDiv.style.display = "block";
+
+// Sélectionner tous les éléments qui ont la classe window
+var windows = document.querySelectorAll(".window");
+var windows2 = document.querySelectorAll(".window2");
+var windowssett = document.querySelectorAll(".windowsett");
+var bggene = document.querySelectorAll(".bggene");
+
+// Fonction pour cacher les éléments
+function hideElements(elements) {
+  elements.forEach(function(element) {
+    element.style.display = "none";
+  });
+}
+
+// Cacher les éléments correspondants
+hideElements(windows);
+hideElements(windows2);
+hideElements(windowssett);
+hideElements(bggene);
+
+
+
 }
 
 setTimeout(restart, 4000);
