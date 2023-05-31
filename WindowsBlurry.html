@@ -897,8 +897,6 @@ left: 60px;
     }
 
             .fullscreen-image {
-
-
             position: fixed;
             top: 0;
             left: 0;
@@ -921,6 +919,8 @@ left: 60px;
   overflow: hidden;
   cursor: grab;
   cursor: -webkit-grab;
+
+
 }
     .ombre {
 
@@ -928,6 +928,32 @@ left: 60px;
         box-shadow: 0 0 160px rgba(0, 0, 0, 1); /* Ajoute une ombre avec un flou de 10px */
     }
 
+.image-animation {
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  animation-name: monter-descendre;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+
+
+}
+
+@keyframes monter-descendre {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
     </style>
 <div id="slidingDiv"class="ombre">  
@@ -936,9 +962,10 @@ left: 60px;
 <div class="info" id="info">Crée par polocrafting aidé par des IA tels que ChatGPT ou BingChat.
 <br><br>Les image ébergé par https://www.zupimages.net/ peuvent parfoir être caprisieuse à chargé mais rien de bien grave.
 <br><br>La page est toujours en développement, donc soyez compréhensif si vous rencontré un bug, bonne naviguation :) 
-<br><br>V:310523-5</div>
+<br><br>V:310523-6</div>
 
  <button id="phone" class="phone" onclick="phone()">Mode Téléphone</button>
+<img src="https://www.svgrepo.com/download/175749/double-up-arrow.svg" class="image-animation" style="filter: invert(100%);" draggable="false" alt="Votre image">
 
   </div>
 
@@ -1145,7 +1172,7 @@ Flou  des fenêtres :  &nbsp;
 
 </div>
 
-    <img id="off" class="fullscreen-image" src="https://cdn.dribbble.com/users/580/screenshots/2367300/spinkit3.gif" alt="Image en plein écran" style="display: block;">
+    <img id="off" class="fullscreen-image" draggable="false" src="https://cdn.dribbble.com/users/580/screenshots/2367300/spinkit3.gif" alt="Image en plein écran" style="display: block;">
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"> </script>
