@@ -37,57 +37,45 @@
       <span id="heure"></span>
       <span id="date"></span>
     </div>
+    
+    <div class="yout" id="yout" style="display: none;">
+      <div class="yout-header">
+        <div id="titrefn">Visioneur Youtube (BETA)</div>
+      </div>
+      <div class="close" onclick="closeYout()">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+      <div class="yout-content">
+        <form>
+          <input type="text" placeholder="Rechercher" id="query">
+          <button type="submit">Rechercher</button>
+        </form>
+        <div id="resultat"></div>
+        <script>
+          const form = document.querySelector('form');
+          const input = document.querySelector('#query');
+          const resultatDiv = document.querySelector('#resultat');
+          const videoIframe = document.querySelector('#video');
 
-<div class="yout" id="yout" style="display: none;">
-  <div class="yout-header">
-    <div id="titrefn">Visioneur Youtube (BETA)</div>
-  </div>
+          form.addEventListener('submit', event => {
+            event.preventDefault();
+            const query = input.value;
+            // Effectuez une recherche YouTube avec la requête et mettez à jour l'URL de l'iframe avec le premier résultat
+            var videoUrl = `${query}`;
+            videoUrl = videoUrl.replace("watch?v=", "embed/");
 
-  <div class="close" onclick="closeYout()">
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
+            // Mettre à jour l'attribut "src" de l'iframe existante avec le nouvel URL
+            videoIframe.setAttribute('src', videoUrl);
 
-  <div class="yout-content">
-
-
-<form>
-  <input type="text" placeholder="Rechercher" id="query">
-  <button type="submit">Rechercher</button>
-</form>
-<div id="resultat"></div>
-
-
-<script>
-  const form = document.querySelector('form');
-  const input = document.querySelector('#query');
-  const resultatDiv = document.querySelector('#resultat');
-  const videoIframe = document.querySelector('#video');
-
-  form.addEventListener('submit', event => {
-    event.preventDefault();
-    const query = input.value;
-    // Effectuez une recherche YouTube avec la requête et mettez à jour l'URL de l'iframe avec le premier résultat
-    var videoUrl = `${query}`;
-    videoUrl = videoUrl.replace("watch?v=", "embed/");
-
-    // Mettre à jour l'attribut "src" de l'iframe existante avec le nouvel URL
-    videoIframe.setAttribute('src', videoUrl);
-
-    // Afficher l'iframe dans la div "resultat"
-    resultatDiv.appendChild(videoIframe);
-  });
-
-  const button = document.querySelector('button');
-
-</script>
-
-
-
-
+            // Afficher l'iframe dans la div "resultat"
+            resultatDiv.appendChild(videoIframe);
+          });
+          const button = document.querySelector('button');
+        </script>
+      </div>
     </div>
-  </div>
-</div>
+
 
 
 <div class="window" id="window1" style="display: none;">
