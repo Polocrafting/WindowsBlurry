@@ -75,51 +75,45 @@
         </script>
       </div>
     </div>
-
-
-
-<div class="window" id="window1" style="display: none;">
-  <div class="window-header"><div id="titrefn">Bloc Note</div></div>
-
-      <div class="close" onclick="close()">
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="window-content">
-
-
- <iframe src="https://notepad-online.com/fr/" id="note" style="width: 99.5%; height: 99.5%;" style="overflow: hidden;"></iframe>
-
-
-
-  </div>
-</div>
-<div class="bggene" id="window5" style="display: none;">
-  <div class="bggene-top"><div id="titrefn">Générateur de fond d'écran</div></div>
-
-      <div class="close" onclick="closeBG()">
-    <div class="line"></div>
-    <div class="line"></div>
-  </div>
-  <div class="bggene-content">
-<button id="generate-btn" >Générer le fond (ça peut être long avec un grand écran)<br><br>La résolution de l’image dépend de la taille de la page actuelle et de son zoom<br>
-Pour retiré la barre de navigation, téléchargez la page html (voir la barre des tâches)<br>
-Actualisez la page pour d’autres couleurs/motifs</button>
-   <button id="saveim" style="display: none;">Enregistrer l'image en local sur la machine (Actualiser la page (f5 ou ↻ pour actualiser))</button>
-
-   <div id="image-container"></div>
-
-<div class="loading-bar-container" id="charge">
-  <div>  <img src="https://media.flixcar.com/delivery/static/inpage/9/images/loading.gif" alt="GIF animé" width="100%" height="100%"></div>
-  <div id="textt">Création de l'image en cours ...</div>
-</div>
-
-
-  </div>  
-
-  </div>
-
-  </div>
+    
+    <div class="window" id="window1" style="display: none;">
+      <div class="window-header"><div id="titrefn">Bloc Note</div>
+    </div>
+    <div class="close" onclick="close()">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="window-content">
+      <iframe src="https://notepad-online.com/fr/" id="note" style="width: 99.5%; height: 99.5%;" style="overflow: hidden;"></iframe>
+    </div>
+    <div class="bggene" id="window5" style="display: none;">
+      <div class="bggene-top"><div id="titrefn">Générateur de fond d'écran</div>
+    </div>
+    <div class="close" onclick="closeBG()">
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="bggene-content">
+      <button id="generate-btn" >
+        Générer le fond (ça peut être long avec un grand écran)
+        <br><br>
+        La résolution de l’image dépend de la taille de la page actuelle et de son zoom
+        <br>
+        Pour retiré la barre de navigation, téléchargez la page html (voir la barre des tâches)
+        <br>
+        Actualisez la page pour d’autres couleurs/motifs
+      </button>
+      <button id="saveim" style="display: none;">
+        Enregistrer l'image en local sur la machine (Actualiser la page (f5 ou ↻ pour actualiser))
+      </button>
+      <div id="image-container"></div>
+      <div class="loading-bar-container" id="charge">
+        <div>
+          <img src="https://media.flixcar.com/delivery/static/inpage/9/images/loading.gif" alt="GIF animé" width="100%" height="100%">
+        </div>
+        <div id="textt">Création de l'image en cours ...</div>
+      </div>
+    </div>  
   <div class="windowsett" id="window4" style="display: none;">
   <div class="windowsett-top"><div id="titrefn">Personnaliser</div></div>
 
