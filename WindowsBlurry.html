@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Ajout de la bibliothèque d'icônes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Ajout d'un script' -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
   </head>
   
   <body>
@@ -156,56 +158,31 @@
         <iframe src="https://www.desmos.com/fourfunction?lang=fr" id="calc" style="width: 99%; height: 99.5%;" style="overflow: hidden;"></iframe>
       </div>
     </div>
-
-
-
-  
-
-
+    
     <br>
-
-  
-
-
-
-<div id="menu" class="menu" style="display: none;">
-  <div class="top-bar">
-    <input type="text" placeholder="Chercher un élément ici">
-  </div>
-
-  
-
-
-  <div class="bottom-bar">
-    <div class="profil">
-    <img src="https://yt3.ggpht.com/1Kmoh17x3yENxM4Xv0LSayWwIxdmqPn6eiRCwvV1DOvgrECifBI5twBpKoaWtETOaAt7uNqo=s176-c-k-c0x00ffffff-no-rj-mo" alt="Image de profil"> 
-
-  </div>
-
-    <div class="status-icon">
-     <button id="POWERbu" onclick="Power()"><img id="POWER" src="https://zupimages.net/up/23/09/7351.png" alt="Image de profil" ></button>
-     
+    
+    <div id="menu" class="menu" style="display: none;">
+      <div class="top-bar">
+        <input type="text" placeholder="Chercher un élément ici">
+      </div>
+      <div class="bottom-bar">
+        <div class="profil">
+          <img src="https://yt3.ggpht.com/1Kmoh17x3yENxM4Xv0LSayWwIxdmqPn6eiRCwvV1DOvgrECifBI5twBpKoaWtETOaAt7uNqo=s176-c-k-c0x00ffffff-no-rj-mo" alt="Image de profil"> 
+        </div>
+        <div class="status-icon">
+          <button id="POWERbu" onclick="Power()"><img id="POWER" src="https://zupimages.net/up/23/09/7351.png" alt="Image de profil" ></button>
+        </div>
+      </div>
+      <button class="par" id="par" onclick="asett()">Personnaliser</button>
+      <button class="newwind" id="newwind" onclick="NewWIN()">Bloc Note</button>
+      <button class="newwind2" id="newwind2" onclick="NewWIN2()">Calculatrice</button>
+      <button class="newwind3" id="newwind3" onclick="aBG()">Générateur de fond d'écran</button>
+      <button class="newwind4" id="newwind4" onclick="NewWIN3()">Visioneur Youtube (BETA)</button>
     </div>
-
-
-  </div>
-
-  <button class="par" id="par" onclick="asett()">Personnaliser</button>
-
-
-
-  <button class="newwind" id="newwind" onclick="NewWIN()">Bloc Note</button>
-
-<button class="newwind2" id="newwind2" onclick="NewWIN2()">Calculatrice</button>
-<button class="newwind3" id="newwind3" onclick="aBG()">Générateur de fond d'écran</button>
-<button class="newwind4" id="newwind4" onclick="NewWIN3()">Visioneur Youtube (BETA)</button>
-
-</div>
-
     <img id="off" class="fullscreen-image" draggable="false" src="https://cdn.dribbble.com/users/580/screenshots/2367300/spinkit3.gif" alt="Image en plein écran" style="display: block;">
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"> </script>
+
 <script>
 
 function phone(){
