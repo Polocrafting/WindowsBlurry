@@ -2,8 +2,8 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-      user-select: none;
-  }
+    user-select: none;
+}
 
   body {
      background-image: url("https://zupimages.net/up/23/18/zyta.png");
